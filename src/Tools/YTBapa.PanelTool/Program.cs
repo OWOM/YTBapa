@@ -1,4 +1,5 @@
 ﻿using System;
+using YTBapa.Services;
 
 namespace YTbapa.PanelTool
 {
@@ -6,7 +7,14 @@ namespace YTbapa.PanelTool
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello 111World!");
+            TestAdd();
+            Console.Read();
         }
+
+        public static  void TestAdd() {
+            TestPanel tes = new TestPanel();
+            Console.WriteLine(tes.Add());
+        }
+
     }
 }

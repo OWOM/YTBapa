@@ -5,4 +5,8 @@
         <TargetFramework>netcoreapp2.1</TargetFramework>
     </PropertyGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\..\Bll\YTBapa.Services\YTBapa.Services.csproj" />
+    </ItemGroup>
+
 </Project>
