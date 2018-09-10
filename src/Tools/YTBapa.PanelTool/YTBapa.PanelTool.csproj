@@ -6,6 +6,7 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\..\Bll\YTBapa.Library\YTBapa.Library.csproj" />
       <ProjectReference Include="..\..\Bll\YTBapa.Services\YTBapa.Services.csproj" />
     </ItemGroup>
 
