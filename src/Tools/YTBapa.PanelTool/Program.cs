@@ -1,20 +1,21 @@
 ﻿using System;
 using YTBapa.Library;
+using YTBapa.Services;
 
 namespace YTbapa.PanelTool
 {
-    class Program
+   public class Program
     {
         static void Main(string[] args)
         {
-            TestAdd();
-            Console.Read();
+            Bank bank = new Bank();
+            bank.Registered();
+            bank.Options();
+
+
         }
 
-        public static  void TestAdd() {
-            TestPanel tes = new TestPanel();
-            Console.WriteLine(tes.Add());
-        }
+       
 
     }
 }
