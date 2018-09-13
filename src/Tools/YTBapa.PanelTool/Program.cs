@@ -11,6 +11,7 @@ namespace YTbapa.PanelTool
         {
             Example example = new Example();
 
+            //银行系统
             Bank bank = new Bank();
             bank.registered();
             bank.According();
@@ -20,6 +21,10 @@ namespace YTbapa.PanelTool
             //example.Inputpay();
             //例子2
             //example.reference();
+            //例子3
+            //example.GetUserName();
+
+
 
             Console.ReadLine();
         }

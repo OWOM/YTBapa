@@ -70,6 +70,49 @@ namespace YTBapa.Services
         //} 
         #endregion
 
+        #region 例子3（使用IndexOf()获取“@”的位置，使用Trim()去掉空格，使用ToLower()强制转换成小写）
+        /// <summary>
+        /// 检查邮箱地址格式
+        /// 把邮箱地址的用户取出
+        /// </summary>
+        /// 
+
+        //string email; //邮箱
+        //string name;  //邮箱用户名
+        //public void TestEmail()
+        //{
+        //    Console.WriteLine("请输入邮箱地址：");
+        //    email = Console.ReadLine();
+        //    Console.WriteLine("您输入的邮箱为地址：{0}", email);
+        //    int position = email.IndexOf("@");
+
+        //    if (position > 0)
+        //    {
+        //        name = email.Substring(0, position);
+        //        Console.WriteLine("您的邮箱用户名为：{0}", name);
+        //        Console.WriteLine(" ");
+        //    }
+        //    else
+        //    {
+        //        Console.WriteLine("您输入的邮箱格式有误！");
+        //    }
+
+        //}
+        ///// <summary>
+        ///// 使用Equals判断
+        ///// </summary>
+        //public void GetUserName()
+        //{
+        //    string choice;
+        //    do
+        //    {
+        //        TestEmail();
+        //        Console.WriteLine("是否继续？(yes/no)");
+        //        choice = Console.ReadLine();
+        //        choice = choice.Trim().ToLower();
+        //    } while (choice.Equals("yes"));
+        //} 
+        #endregion
     }
 
 }
