@@ -45,29 +45,29 @@ namespace YTBapa.Services
         #endregion
 
         #region 例子2（使用引用传递）
-        public void reference()
-        {
-            int num1, num2;
-            Console.WriteLine("请输入两个数字：");
-            num1 = int.Parse(Console.ReadLine());
-            num2 = int.Parse(Console.ReadLine());
-            Console.WriteLine("转换前：{0}，{1}", num1, num2);
-            Sawp(ref num1, ref num2);
-            Console.WriteLine("转换后：{0}，{1}", num1, num2);
+        //public void reference()
+        //{
+        //    int num1, num2;
+        //    Console.WriteLine("请输入两个数字：");
+        //    num1 = int.Parse(Console.ReadLine());
+        //    num2 = int.Parse(Console.ReadLine());
+        //    Console.WriteLine("转换前：{0}，{1}", num1, num2);
+        //    Sawp(ref num1, ref num2);
+        //    Console.WriteLine("转换后：{0}，{1}", num1, num2);
 
-        }
+        //}
         /// <summary>
         /// 使用引用传递转换数字
         /// </summary>
         /// <param name="num1"></param>
         /// <param name="num2"></param>
-        public void Sawp(ref int num1, ref int num2)
-        {
-            int tem;
-            tem = num1;
-            num1 = num2;
-            num2 = tem;
-        } 
+        //public void Sawp(ref int num1, ref int num2)
+        //{
+
+        //    num1 = num1 - num2;
+        //    num2 = num1 + num2;
+        //    num1 = num2 - num1;
+        //} 
         #endregion
 
     }

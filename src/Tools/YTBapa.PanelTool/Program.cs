@@ -11,14 +11,15 @@ namespace YTbapa.PanelTool
         {
             Example example = new Example();
 
-            //Bank bank = new Bank();
-            //bank.Registered();
-            //bank.Options();
+            Bank bank = new Bank();
+            bank.registered();
+            bank.According();
+            bank.options();
 
             //例子1
             //example.Inputpay();
             //例子2
-            example.reference();
+            //example.reference();
 
             Console.ReadLine();
         }
