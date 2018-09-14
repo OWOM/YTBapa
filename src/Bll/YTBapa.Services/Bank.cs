@@ -30,6 +30,7 @@ namespace YTBapa.Services
         //} 
         #endregion
 
+        #region 逻辑代码
         /// <summary>
         /// 初始用户信息
         /// </summary>
@@ -144,8 +145,21 @@ namespace YTBapa.Services
             money = item.Money;
             return money;
         }
+        /// <summary>
+        /// 修改密码
+        /// </summary>
+        /// <param name="account"></param>
+        /// <param name="New_pwd"></param>
+        /// <param name="New_Pwd"></param>
+        /// <returns></returns>
+        public string ModifyPassword(string account, string New_pwd, string New_Pwd)
+        {
+            var a = users.FirstOrDefault(c => c.Account == account);
+            return a == null ? "-1" : New_Pwd != New_pwd ? "-3" : New_Pwd == New_pwd ? a.Password = New_Pwd : "0";
+        }
+        #endregion
 
-
+        #region 存款
         ///// <summary>
         /// 存款
         /// </summary>
@@ -187,7 +201,9 @@ namespace YTBapa.Services
                 }
             }
         }
+        #endregion
 
+        #region 取款
         /// <summary>
         /// 取款
         /// </summary>
@@ -229,10 +245,9 @@ namespace YTBapa.Services
                 }
             }
         }
+        #endregion
 
-
-
-
+        #region 转账
         /// <summary>
         /// 转账
         /// </summary>
@@ -287,9 +302,10 @@ namespace YTBapa.Services
                     Console.WriteLine("转账成功！转出账号：{0},余额为：{1}，转入账户：{2}，金额为：{3}", account, fblance, toAccount, result);
                 }
             }
-
         }
+        #endregion
 
+        #region 查询余额
         /// <summary>
         /// 查询余额
         /// </summary>
@@ -318,9 +334,60 @@ namespace YTBapa.Services
             else
             {
                 double result = Query(account, money);
-                Console.WriteLine("您的账户余额为：{0}元", result);
+                Console.WriteLine("您的账户余额为：{0:F2}元", result);
             }
         }
+
+        #endregion
+
+        #region 修改密码
+        /// <summary>
+        /// 修改密码
+        /// </summary>
+        public void Modify()
+        {
+            string account;    //账号
+            string pwd;        //密码
+            string New_pwd;    //新密码
+            string New_Pwd;   //再次输入密码
+            Console.WriteLine("请输入要修改的账号：");
+            account = Console.ReadLine();
+            Console.WriteLine("请输入原密码：");
+            pwd = Console.ReadLine();
+            //判断账号和密码是否有误
+            string from_user = Temporary(account, pwd);
+            if (from_user == "-1")
+            {
+                Console.WriteLine("账号输入错误！");
+                return;
+            }
+            else if (from_user == "-2")
+            {
+                Console.WriteLine("密码输入有误！");
+                return;
+            }
+            else
+            {
+                Console.WriteLine("请输入新密码：");
+                New_pwd = Console.ReadLine();
+                Console.WriteLine("请再次输入新密码：");
+                New_Pwd = Console.ReadLine();
+                string New_Password = ModifyPassword(account, New_Pwd, New_pwd);
+                if (New_Password == "-3")
+                {
+                    Console.WriteLine("两次输入不一致！");
+                }
+                else
+                {
+                    Console.WriteLine("修改成功！新密码为：{0}", New_Pwd);
+                }
+            }
+
+        }
+        #endregion
+
+
+
         /// <summary>
         /// 选项
         /// </summary>
@@ -329,7 +396,7 @@ namespace YTBapa.Services
             do
             {
                 Console.WriteLine("===================欢迎使用自动银行服务==========================");
-                Console.WriteLine("1：存款 2：取款 3：转账 4：查询余额 5：退出");
+                Console.WriteLine("1：存款 2：取款 3：转账 4：查询余额 5：修改密码 0：退出");
                 Console.WriteLine("=================================================================");
                 string figure = Console.ReadLine();
                 Console.WriteLine("     ");
@@ -348,6 +415,9 @@ namespace YTBapa.Services
                         QueryBalance();
                         continue;
                     case "5":
+                        Modify();
+                        continue;
+                    case "0":
                         break;
                     default:
                         Console.WriteLine("输入无效！");
@@ -357,7 +427,7 @@ namespace YTBapa.Services
             } while (true);
         }
 
-
+        #region 显示用户
         /// <summary>
         /// 显示用户
         /// </summary>
@@ -368,6 +438,7 @@ namespace YTBapa.Services
                 Console.WriteLine("用户名：{0}，账户：{1}，存储金额：{2}，密码：{3}，身份证：{4}", item.Name, item.Account, item.Money, item.Password, item.IdentityNum);
                 Console.WriteLine("  ");
             }
-        }
+        } 
+        #endregion
     }
 }
