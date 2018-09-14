@@ -17,12 +17,25 @@ namespace YTbapa.PanelTool
             bank.According();
             bank.options();
 
+            #region 第三章
             //例子1
             //example.Inputpay();
             //例子2
-            //example.reference();
+            //example.reference(); 
+            #endregion
+            #region 第四章
+            //例子1
+            //example.GetUserName(); 
+            //上机1
+            //example.InputData();
+            //例子2
+            //example.Segmentation();
+            //上机2
+            //example.Conversion();
             //例子3
-            //example.GetUserName();
+            //example.TotalScore();
+
+            #endregion
 
 
 
