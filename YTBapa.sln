@@ -31,8 +31,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YTBapa.Library", "src\Bll\Y
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Database", "Database", "{1ABC0FDD-6F36-4216-B27F-597A9DCA9235}"
 	ProjectSection(SolutionItems) = preProject
-		C:\Users\Chen Wei Tao\Desktop\第七章.sql = C:\Users\Chen Wei Tao\Desktop\第七章.sql
-		C:\Users\Chen Wei Tao\Desktop\第六章.sql = C:\Users\Chen Wei Tao\Desktop\第六章.sql
+		C:\Users\Chen Wei Tao\Desktop\临时文本\第七章.sql = C:\Users\Chen Wei Tao\Desktop\临时文本\第七章.sql
+		C:\Users\Chen Wei Tao\Desktop\临时文本\第九章.sql = C:\Users\Chen Wei Tao\Desktop\临时文本\第九章.sql
+		C:\Users\Chen Wei Tao\Desktop\临时文本\第八章.sql = C:\Users\Chen Wei Tao\Desktop\临时文本\第八章.sql
+		C:\Users\Chen Wei Tao\Desktop\临时文本\第六章.sql = C:\Users\Chen Wei Tao\Desktop\临时文本\第六章.sql
 	EndProjectSection
 EndProject
 Global
