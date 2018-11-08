@@ -4,4 +4,7 @@
     <Configurations>Debug;Release;YTBapa.Web</Configurations>
     <Platforms>AnyCPU</Platforms>
   </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="System.Data.SqlClient" Version="4.5.1" />
+  </ItemGroup>
 </Project>

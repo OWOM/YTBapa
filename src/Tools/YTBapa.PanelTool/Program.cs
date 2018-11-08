@@ -2,6 +2,7 @@
 using YTBapa.Library;
 using YTBapa.Services;
 
+
 namespace YTbapa.PanelTool
 {
    public class Program
@@ -11,12 +12,13 @@ namespace YTbapa.PanelTool
         {
             Example example = new Example();
 
+            #region 银行系统
             //银行系统
-            Bank bank = new Bank();
-            bank.registered();
-            bank.According();
-            bank.options();
-
+            //Bank bank = new Bank();
+            //bank.registered();
+            //bank.According();
+            //bank.options(); 
+            #endregion
             #region 第三章
             //例子1
             //example.Inputpay();
@@ -37,6 +39,9 @@ namespace YTbapa.PanelTool
 
             #endregion
 
+            //学生管理系统
+            Student_management sm = new Student_management();
+            sm.Query_one();
 
 
             Console.ReadLine();
