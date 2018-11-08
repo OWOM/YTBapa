@@ -11,41 +11,47 @@ namespace YTBapa.Services
   public class Student_management
     {
         string name;  //用户名
+        int count;    //输入次数
         /// <summary>
         /// 判断用户密码是否有误
         /// </summary>
         public void Query_one()
         {
-            //登陆账号
-            Console.WriteLine("请输入用户名：");
-            name = Console.ReadLine();
-            Console.WriteLine("请输入密码：");
-            string pwo = Console.ReadLine();
-            string sql = string.Format("Select StudentName,LoginPwe from Student Where StudentName='{0}' and LoginPwe='{1}'", name, pwo);
-            try
+            do
             {
-                var reader = DBOperation.ExecuteReader(sql);
-                if (reader.HasRows != true)
+                //登陆账号
+                Console.WriteLine("请输入用户名：");
+                name = Console.ReadLine();
+                Console.WriteLine("请输入密码：");
+                string pwo = Console.ReadLine();
+                string sql = string.Format("Select StudentName,LoginPwe from Student Where StudentName='{0}' and LoginPwe='{1}'", name, pwo);
+                try
                 {
-                    Console.WriteLine("登陆失败！用户名或密码有误！");
+                    var reader = DBOperation.ExecuteReader(sql);
+                    if (reader.HasRows != true)
+                    {
+                        Console.WriteLine("\n登陆失败！用户名或密码有误！");
+                        count++;
+                    }
+                    else
+                    {
+                        Console.WriteLine("登陆成功！欢迎：{0}\n\n欢迎使用学生管理系统", name);
+                        reader.Close();
+                        Choose_one();
+                    }
                 }
-                else
+                catch (Exception ex)
                 {
-                    Console.WriteLine("登陆成功！欢迎：{0}\n\n欢迎使用学生管理系统", name);
-                    reader.Close();
-                    Choose_one();
-                }
-            }
-            catch (Exception ex)
-            {
 
-                Console.WriteLine("出现异常：{0}", ex.Message);
-            }
-            finally
-            {
-                DBOperation.CloseConnection();
-                //Console.WriteLine("数据库关闭成功！");
-            }
+                    Console.WriteLine("出现异常：{0}", ex.Message);
+                }
+                finally
+                {
+                    DBOperation.CloseConnection();
+                    //Console.WriteLine("数据库关闭成功！");
+                }
+            } while (count<3);
+            Console.WriteLine("\n您输入三次有误，本次退出！");
         }
         /// <summary>
         /// 选项
